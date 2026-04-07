@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "faff-plugin-matrix"
+version = "0.1.0"
+description = "A faff sidecar that posts the current faff to an end-to-end encrypted Matrix room (MAS-compatible)."
+requires-python = ">=3.11"
+dependencies = [
+    "faff-core",
+    "matrix-nio[e2e]>=0.24",
+]
+
+[project.scripts]
+faff-plugin-matrix = "faff_plugin_matrix.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
